@@ -74,13 +74,14 @@ class Environment(object):
         self.intrinsec_temperature = self.atmospheric_temperature + 1.25*self.current_number_users+1.25*self.current_rate_data
         delta_intrinsec_temperaure = self.intrinsec_temperature - past_intrinsic_temperature
         # Calcular la variación de temperatura causada por la IA
-        if(direction==-1):
+        if(direction==-1): #if temperature down 
             delta_temperature_ai = -energy_ai
-        elif(direction == 1):
+        elif(direction == 1): #if temperature up
             delta_temperature_ai = energy_ai
         # Calcular la nueva temperatura del server cuando hay IA conectada
         self.temperature_ai += delta_intrinsec_temperaure + delta_temperature_ai
         # Calcular la nueva temperatura del server cuando no hay IA conectada
+       # se sign column(bar)
         self.temperature_noai += delta_intrinsec_temperaure
         
         # OBTENCIÓN DEL GAME OVER
@@ -138,12 +139,3 @@ class Environment(object):
         
         return current_state, self.reward, self.game_over
         
-        
-        
-        
-        
-        
-        
-        
-        
-    

@@ -12,7 +12,7 @@ class DQN(object):
     def __init__(self, max_memory = 100, discount_factor = 0.9):
         self.memory = list()
         self.max_memory = max_memory
-        self.discount_factor = discount_factor
+        self.discount_factor = discount_factor #gamma factor
         
     # CREACIÓN DE UN MÉTODO QUE CONSTRUYA LA MEMORIA DE LA REPETICIÓN DE EXPERIENCIA
     def remember(self, transition, game_over):
@@ -28,7 +28,7 @@ class DQN(object):
         inputs = np.zeros((min(batch_size, len_memory), num_inputs))        
         targets = np.zeros((min(batch_size, len_memory), num_outputs))
         for i, idx in enumerate(np.random.randint(0, len_memory, size=min(len_memory, batch_size))):
-            current_state, action, reward, next_state = self.memory[idx][0]
+            current_state, action, reward, next_state = self.memory[idx][0] #we want the memory's transition
             game_over = self.memory[idx][1]
             inputs[i] = current_state
             targets[i] = model.predict(current_state)[0]
@@ -38,7 +38,4 @@ class DQN(object):
             else:
                 targets[i, action] = reward + self.discount_factor*Q_sa
         return inputs, targets
-            
-            
-            
             

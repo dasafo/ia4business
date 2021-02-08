@@ -19,9 +19,9 @@ np.random.seed(42)
 rn.seed(12345)
 
 # CONFIGURACIÓN DE LOS PARÁMETROS 
-epsilon = 0.3
+epsilon = 0.3 #our system will take 30% exploration(action random selection) and 70% explotation
 number_actions = 5
-direction_boundary = (number_actions -1)/2
+direction_boundary = (number_actions -1)/2 #intermediate point (our boundary)
 number_epochs = 100
 max_memory = 3000
 batch_size = 512
@@ -52,7 +52,7 @@ if (env.train):
         new_month = np.random.randint(0, 12)
         env.reset(new_month = new_month)  
         game_over = False
-        current_state, _, _ = env.observe()
+        current_state, _, _ = env.observe() #we only want current_state return from observe method
         timestep = 0
         # INICIALIZACIÓN DEL BUCLE DE TIMESTEPS (Timestep = 1 minuto) EN UNA EPOCA
         while ((not game_over) and (timestep <= 5*30*24*60)):
@@ -60,7 +60,7 @@ if (env.train):
             if np.random.rand() <= epsilon:
                 action = np.random.randint(0, number_actions)
                    
-            # EJECUTAR LA SIGUIENTE ACCIÓN POR INFERENCIA
+            # EJECUTAR LA SIGUIENTE ACCIÓN POR INFERENCIA (Explotation)
             else: 
                 q_values = model.predict(current_state)
                 action = np.argmax(q_values[0])
