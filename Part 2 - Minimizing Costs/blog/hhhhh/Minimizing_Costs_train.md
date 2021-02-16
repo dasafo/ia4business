@@ -1,50 +1,86 @@
-# Inteligencia Artificial aplicada a Negocios y Empresas - Caso Práctico 2
-# Entrenamiento de la IA
+# Training the IA
 
-# Instalación de Keras
-# conda install -c conda-forge keras
+### Import python libraries and our libraries:
 
-# Importar las librerías y el resto de ficheros de python
+
+```python
 import os
 import numpy as np
 import random as rn
+
 import environment
 import brain
 import dqn
 
-# Establecer semillas para la reproducibilidad del experimento
+```
+
+### Reproducibility seeds setup:
+
+
+```python
 os.environ['PYTHONHASHSEED'] = '0'
-np.random.seed(42)
+np.random.seed(85)
 rn.seed(12345)
 
-# CONFIGURACIÓN DE LOS PARÁMETROS
-epsilon = .3
+```
+
+### Parameters:
+
+
+```python
+epsilon = 0.3 #our system will take 30% exploration(action random selection) and 70% explotation
 number_actions = 5
-direction_boundary = (number_actions - 1) / 2
+direction_boundary = (number_actions -1)/2 #intermediate point (our boundary)
 number_epochs = 100
 max_memory = 3000
 batch_size = 512
-temperature_step = 1.5
+temp_step = 1.5
 
-# CONSTRUCCIÓN DEL ENTORNO CREANDO UN OBJETO DE LA CLASE ENVIRONMENT CLASS
-env = environment.Environment(optimal_temperature = (18.0, 24.0),initial_month = 0, initial_number_users = 20, initial_rate_data = 30)
+```
 
-# CONSTRUCCIÓN DEL CEREBRO CREADO UN OBJETO DE LA CLASE BRAIN
+### Building the environment with a class object Environment()
+
+
+```python
+env = environment.Environment(optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 15, initial_rate_data = 80)
+
+```
+
+### Building the brain with a class object Brain()
+
+
+```python
 brain = brain.Brain(learning_rate = 0.00001, number_actions = number_actions)
 
-# CONSTRUCCIÓN DEL MODELO DE DQN CREANDO UN OBJETO DE LA CLASE DQN 
+```
+
+### Building DQN model with a class object DQN()
+
+
+```python
 dqn = dqn.DQN(max_memory = max_memory, discount_factor = 0.9)
 
-# ELECCIÓN DEL MODO DE ENTRENAMIENTO
+```
+
+### Choosing training mode
+
+
+```python
 train = True
 
-# Entrenamiento de la IA
+```
+
+### IA training
+
+
+```python
 env.train = train
 model = brain.model
 early_stopping = True
 patience = 10
 best_total_reward = -np.inf
 patience_count = 0
+
 if (env.train):
     # STARTING EPOCH BUCLE (1 Epoch = 5 Mouths)
     for epoch in range(1, number_epochs):
@@ -52,9 +88,9 @@ if (env.train):
         total_reward = 0
         loss = 0.
         new_month = np.random.randint(0, 12)
-        env.reset(new_month = new_month)
+        env.reset_env(new_month = new_month)
         game_over = False
-        current_state, _, _ = env.observe() #we only want current_state return from give_env method
+        current_state, _, _ = env.give_env() #we only want current_state return from give_env method
         timestep = 0
         # INICIALIZATION TIMESTEPS BUCLE(Timestep = 1 minute) AT ONE EPOCH
         while ((not game_over) and timestep <= 5 * 30 * 24 * 60):
@@ -65,7 +101,7 @@ if (env.train):
                     direction = -1
                 else:
                     direction = 1
-                energy_ai = abs(action - direction_boundary) * temperature_step
+                energy_ai = abs(action - direction_boundary) * temp_step
             
             # RUNNING NEXT ACTION BY EXPLOTATION
             else:
@@ -75,7 +111,7 @@ if (env.train):
                     direction = -1
                 else:
                     direction = 1
-                energy_ai = abs(action - direction_boundary) * temperature_step
+                energy_ai = abs(action - direction_boundary) * temp_step
                
             # UPDATING ENVIRONMENT AND REACHING NEXT STATE
             next_state, reward, game_over = env.update_env(direction, energy_ai, int(timestep/(30*24*60)))
@@ -91,20 +127,27 @@ if (env.train):
             loss += model.train_on_batch(inputs, targets)
             timestep += 1
             current_state = next_state
-        # IMPRIMIR EL RESULTADO DE ENTREAMIENTO PARA CADA EPOCH
+
+        # PRINTING RESULTS AT THE END OF EPOCH
         print("\n")
-        print("Epoch: {:03d}/{:03d}".format(epoch, number_epochs))
-        print("Total Energy spent with an AI: {:.0f}".format(env.total_energy_ai))
-        print("Total Energy spent with no AI: {:.0f}".format(env.total_energy_noai))
+        print("Epoch: {:03d}/{:03d}.".format(epoch, number_epochs))
+        print(" - Total Energy spended by IA: {:.0f} J.".format(env.total_energy_ai))
+        print(" - Total Energy spended by no-IA: {:.0f} J.".format(env.total_energy_noai))
+
         # EARLY STOPPING
-        if (early_stopping):
+        if early_stopping:
             if (total_reward <= best_total_reward):
                 patience_count += 1
-            elif (total_reward > best_total_reward):
+            else:
                 best_total_reward = total_reward
                 patience_count = 0
-            if (patience_count >= patience):
-                print("Early Stopping")
+
+            if patience_count >= patience:
+                print("Early method execution.")
                 break
-        # GUARDAR EL MODELO
+
+
+        # Saving model for the future
         model.save("model.h5")
+
+```

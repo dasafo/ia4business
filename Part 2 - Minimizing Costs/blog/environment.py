@@ -99,10 +99,8 @@ class Environment(object):
 
 
 		# SCALING NEXT STATE
-		scaled_temp_ai = (self.temp_ai - self.min_temp)
-                                / (self.max_temp - self.min_temp)
-        	scaled_number_users = (self.current_number_users - self.min_number_users)
-                              / (self.max_number_users - self.min_number_users)
+		scaled_temp_ai = (self.temp_ai - self.min_temp) / (self.max_temp - self.min_temp)
+		scaled_number_users = (self.current_number_users - self.min_number_users) / (self.max_number_users - self.min_number_users)
 		scaled_rate_data = (self.current_rate_data - self.min_rate_data)/(self.max_rate_data - self.min_rate_data)
 		next_state = np.matrix([scaled_temp_ai, scaled_number_users, scaled_rate_data])
 
