@@ -65,16 +65,16 @@ class Environment(object):
 		# Intrinsic temperature variation
 		past_intrinsic_temp =  self.intrinsec_temp #previous temperature 
 		self.intrinsec_temp = self.atmospheric_temp + 1.3*self.current_number_users+1.3*self.current_rate_data
-		delta_intrinsec_temperaure = self.intrinsec_temp - past_intrinsic_temp
+		delta_intrinsec_temp = self.intrinsec_temp - past_intrinsic_temp
 		# Temperature variation caused by IA
 		if(direction==-1): #if temperature down 
 		    delta_temp_ai = -energy_ai
 		elif(direction == 1): #if temperature up
 		    delta_temp_ai = energy_ai
 		# New server temperature when IA is connected
-		self.temp_ai += delta_intrinsec_temperaure + delta_temp_ai
+		self.temp_ai += delta_intrinsec_temp + delta_temp_ai
 		# New server temperature when IA is disabled
-		self.temp_noai += delta_intrinsec_temperaure
+		self.temp_noai += delta_intrinsec_temp
 
 		# GETTING THE GAME OVER
 		if(self.temp_ai < self.min_temp):
@@ -98,7 +98,11 @@ class Environment(object):
 		self.total_energy_noai += energy_noai
 
 
-		# SCALING NEXT STATE 
+		# SCALING NEXT STATE
+		scaled_temp_ai = (self.temp_ai - self.min_temp)
+                                / (self.max_temp - self.min_temp)
+        	scaled_number_users = (self.current_number_users - self.min_number_users)
+                              / (self.max_number_users - self.min_number_users)
 		scaled_rate_data = (self.current_rate_data - self.min_rate_data)/(self.max_rate_data - self.min_rate_data)
 		next_state = np.matrix([scaled_temp_ai, scaled_number_users, scaled_rate_data])
 
