@@ -19,7 +19,7 @@ batch_size = 512
 temp_step = 1.5
 
 
-env = environment.Environment(optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 15, initial_rate_data = 80)
+env = environment.Environment(optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 18, initial_rate_data = 32)
 
 brain = brain.Brain(learning_rate = 0.00001, number_actions = number_actions)
 

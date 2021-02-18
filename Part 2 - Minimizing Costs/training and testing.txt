@@ -1,0 +1,125 @@
+Epoch: 001/100
+Total Energy spent with an AI: 34
+Total Energy spent with no AI: 163
+
+
+Epoch: 002/100
+Total Energy spent with an AI: 18
+Total Energy spent with no AI: 70
+
+
+Epoch: 003/100
+Total Energy spent with an AI: 18
+Total Energy spent with no AI: 82
+
+
+Epoch: 004/100
+Total Energy spent with an AI: 0
+Total Energy spent with no AI: 8
+
+
+Epoch: 005/100
+Total Energy spent with an AI: 44
+Total Energy spent with no AI: 231
+
+
+Epoch: 006/100
+Total Energy spent with an AI: 28
+Total Energy spent with no AI: 86
+
+
+Epoch: 007/100
+Total Energy spent with an AI: 63
+Total Energy spent with no AI: 45
+
+
+Epoch: 008/100
+Total Energy spent with an AI: 98
+Total Energy spent with no AI: 126
+
+
+Epoch: 009/100
+Total Energy spent with an AI: 144
+Total Energy spent with no AI: 212
+
+
+Epoch: 010/100
+Total Energy spent with an AI: 148
+Total Energy spent with no AI: 319
+
+
+Epoch: 011/100
+Total Energy spent with an AI: 26
+Total Energy spent with no AI: 140
+
+
+Epoch: 012/100
+Total Energy spent with an AI: 9
+Total Energy spent with no AI: 32
+
+
+Epoch: 013/100
+Total Energy spent with an AI: 4
+Total Energy spent with no AI: 63
+
+
+Epoch: 014/100
+Total Energy spent with an AI: 24
+Total Energy spent with no AI: 88
+
+
+Epoch: 015/100
+Total Energy spent with an AI: 30
+Total Energy spent with no AI: 236
+
+
+Epoch: 016/100
+Total Energy spent with an AI: 6
+Total Energy spent with no AI: 105
+
+
+Epoch: 017/100
+Total Energy spent with an AI: 33
+Total Energy spent with no AI: 179
+
+
+Epoch: 018/100
+Total Energy spent with an AI: 3
+Total Energy spent with no AI: 19
+
+
+Epoch: 019/100
+Total Energy spent with an AI: 16
+Total Energy spent with no AI: 67
+
+
+Epoch: 020/100
+Total Energy spent with an AI: 80
+Total Energy spent with no AI: 85
+
+
+Epoch: 021/100
+Total Energy spent with an AI: 45
+Total Energy spent with no AI: 103
+
+
+Epoch: 022/100
+Total Energy spent with an AI: 128
+Total Energy spent with no AI: 224
+
+
+Epoch: 023/100
+Total Energy spent with an AI: 12
+Total Energy spent with no AI: 27
+
+
+Epoch: 024/100
+Total Energy spent with an AI: 114
+Total Energy spent with no AI: 205
+
+
+Epoch: 025/100
+Total Energy spent with an AI: 68
+Total Energy spent with no AI: 107
+Early Stopping
+

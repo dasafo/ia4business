@@ -3,7 +3,7 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 class Brain(object):
-	def __init__(self, learning_rate = 0.00001, number_actions = 5):
+	def __init__(self, learning_rate = 0.001, number_actions = 5):
 		self.learning_rate = learning_rate
 
 		# INPUT LAYER FORMED BY INPUT STATES

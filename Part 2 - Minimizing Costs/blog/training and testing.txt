@@ -1,0 +1,173 @@
+Epoch: 001/100.
+ - Total Energy spended by IA: 22 J.
+ - Total Energy spended by no-IA: 29 J.
+
+
+Epoch: 002/100.
+ - Total Energy spended by IA: 28 J.
+ - Total Energy spended by no-IA: 26 J.
+
+
+Epoch: 003/100.
+ - Total Energy spended by IA: 20 J.
+ - Total Energy spended by no-IA: 39 J.
+
+
+Epoch: 004/100.
+ - Total Energy spended by IA: 4 J.
+ - Total Energy spended by no-IA: 2 J.
+
+
+Epoch: 005/100.
+ - Total Energy spended by IA: 4 J.
+ - Total Energy spended by no-IA: 1 J.
+
+
+Epoch: 006/100.
+ - Total Energy spended by IA: 10 J.
+ - Total Energy spended by no-IA: 12 J.
+
+
+Epoch: 007/100.
+ - Total Energy spended by IA: 22 J.
+ - Total Energy spended by no-IA: 48 J.
+
+
+Epoch: 008/100.
+ - Total Energy spended by IA: 22 J.
+ - Total Energy spended by no-IA: 19 J.
+
+
+Epoch: 009/100.
+ - Total Energy spended by IA: 122 J.
+ - Total Energy spended by no-IA: 181 J.
+
+
+Epoch: 010/100.
+ - Total Energy spended by IA: 3 J.
+ - Total Energy spended by no-IA: 0 J.
+
+
+Epoch: 011/100.
+ - Total Energy spended by IA: 134 J.
+ - Total Energy spended by no-IA: 169 J.
+
+
+Epoch: 012/100.
+ - Total Energy spended by IA: 84 J.
+ - Total Energy spended by no-IA: 59 J.
+
+
+Epoch: 013/100.
+ - Total Energy spended by IA: 252 J.
+ - Total Energy spended by no-IA: 352 J.
+
+
+Epoch: 014/100.
+ - Total Energy spended by IA: 8 J.
+ - Total Energy spended by no-IA: 4 J.
+
+
+Epoch: 015/100.
+ - Total Energy spended by IA: 27 J.
+ - Total Energy spended by no-IA: 77 J.
+
+
+Epoch: 016/100.
+ - Total Energy spended by IA: 8 J.
+ - Total Energy spended by no-IA: 16 J.
+
+
+Epoch: 017/100.
+ - Total Energy spended by IA: 18 J.
+ - Total Energy spended by no-IA: 44 J.
+
+
+Epoch: 018/100.
+ - Total Energy spended by IA: 6 J.
+ - Total Energy spended by no-IA: 2 J.
+
+
+Epoch: 019/100.
+ - Total Energy spended by IA: 8 J.
+ - Total Energy spended by no-IA: 1 J.
+
+
+Epoch: 020/100.
+ - Total Energy spended by IA: 33 J.
+ - Total Energy spended by no-IA: 25 J.
+
+
+Epoch: 021/100.
+ - Total Energy spended by IA: 78 J.
+ - Total Energy spended by no-IA: 131 J.
+
+
+Epoch: 022/100.
+ - Total Energy spended by IA: 706 J.
+ - Total Energy spended by no-IA: 960 J.
+
+
+Epoch: 023/100.
+ - Total Energy spended by IA: 50 J.
+ - Total Energy spended by no-IA: 304 J.
+
+
+Epoch: 024/100.
+ - Total Energy spended by IA: 8 J.
+ - Total Energy spended by no-IA: 34 J.
+
+
+Epoch: 025/100.
+ - Total Energy spended by IA: 0 J.
+ - Total Energy spended by no-IA: 0 J.
+
+
+Epoch: 026/100.
+ - Total Energy spended by IA: 4 J.
+ - Total Energy spended by no-IA: 61 J.
+
+
+Epoch: 027/100.
+ - Total Energy spended by IA: 86 J.
+ - Total Energy spended by no-IA: 282 J.
+
+
+Epoch: 028/100.
+ - Total Energy spended by IA: 32 J.
+ - Total Energy spended by no-IA: 148 J.
+
+
+Epoch: 029/100.
+ - Total Energy spended by IA: 21 J.
+ - Total Energy spended by no-IA: 67 J.
+
+
+Epoch: 030/100.
+ - Total Energy spended by IA: 8 J.
+ - Total Energy spended by no-IA: 41 J.
+
+
+Epoch: 031/100.
+ - Total Energy spended by IA: 6 J.
+ - Total Energy spended by no-IA: 7 J.
+
+
+Epoch: 032/100.
+ - Total Energy spended by IA: 20 J.
+ - Total Energy spended by no-IA: 61 J.
+
+
+Epoch: 033/100.
+ - Total Energy spended by IA: 24 J.
+ - Total Energy spended by no-IA: 189 J.
+Early method execution.
+
+
+
+
+ - Total Energy spended by IA: 382928 J.
+ - Total Energy spended by no-IA: 1595671 J.
+--------------------------------------------------
+ ENERGY SAVED: 76 %.
+

@@ -3,7 +3,7 @@ import numpy as np
 
 #Create the class and its methods
 class Environment(object):
-	def __init__(self, optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 15, initial_rate_data = 80):
+	def __init__(self, optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 8, initial_rate_data = 80):
 		self.monthly_atmospheric_temp = [1.8, 2.5, 6, 9.5, 13.6, 16.7, 18.3, 18.1, 15.1, 10.5, 6.1, 2.9]
 		self.initial_month = initial_month
 		self.atmospheric_temp = self.monthly_atmospheric_temp[initial_month]
@@ -20,7 +20,7 @@ class Environment(object):
 		self.current_number_users = initial_number_users
 		self.initial_rate_data = initial_rate_data
 		self.current_rate_data = initial_rate_data
-		self.intrinsec_temp = self.atmospheric_temp + 1.3*self.current_number_users+1.3*self.current_rate_data
+		self.intrinsec_temp = self.atmospheric_temp + 1.25*self.current_number_users+1.25*self.current_rate_data
 		self.temp_ai = self.intrinsec_temp
 		self.temp_noai = (self.optimal_temp[0]+self.optimal_temp[1])/2.0
 		self.total_energy_ai = 0.0
@@ -64,7 +64,7 @@ class Environment(object):
 		    self.current_rate_data = self.max_rate_data
 		# Intrinsic temperature variation
 		past_intrinsic_temp =  self.intrinsec_temp #previous temperature 
-		self.intrinsec_temp = self.atmospheric_temp + 1.3*self.current_number_users+1.3*self.current_rate_data
+		self.intrinsec_temp = self.atmospheric_temp + 1.25*self.current_number_users+1.25*self.current_rate_data
 		delta_intrinsec_temp = self.intrinsec_temp - past_intrinsic_temp
 		# Temperature variation caused by IA
 		if(direction==-1): #if temperature down 
@@ -112,7 +112,7 @@ class Environment(object):
 		self.initial_month = new_month
 		self.current_number_users = self.initial_number_users
 		self.current_rate_data = self.initial_rate_data
-		self.intrinsec_temp = self.atmospheric_temp + 1.3*self.current_number_users+1.3*self.current_rate_data
+		self.intrinsec_temp = self.atmospheric_temp + 1.25*self.current_number_users+1.25*self.current_rate_data
 		self.temp_ai = self.intrinsec_temp
 		self.temp_noai = (self.optimal_temp[0]+self.optimal_temp[1])/2.0
 		self.total_energy_ai = 0.0

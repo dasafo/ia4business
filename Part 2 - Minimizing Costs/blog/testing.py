@@ -16,7 +16,7 @@ direction_boundary = (number_actions -1)/2
 temp_step = 1.5
 
 # BUILDING ENVIERONMENT WITH A CLASS OBJECT ENMIRONMENT()
-env = environment.Environment(optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 20, initial_rate_data = 30)
+env = environment.Environment(optimal_temp = (15.0, 25.0), initial_month = 0, initial_number_users = 18, initial_rate_data = 32)
 
 # UPLOADING THE MODEL
 model = load_model("model.h5")
