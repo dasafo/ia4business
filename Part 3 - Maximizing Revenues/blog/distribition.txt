@@ -1,0 +1,3 @@
+Absolute Permormance: 1294100 $
+Relative Permormance: 109 %
+
